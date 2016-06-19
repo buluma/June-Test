@@ -10,7 +10,7 @@
  */
 
 // include config file loader
-require_once "lib/yaml_loader.php";
+require_once "/lib/yaml_loader.php";
 
 // Change these configuration options if needed, see above descriptions for info.
 $enable_jsonp    = false;
@@ -54,10 +54,10 @@ if ( !isset($_GET['url']) && !isset($_GET['q']) && !isset($_GET['screen_names'])
 } else if ( isset($_GET['screen_names']) ) {
 
   // load Epi
-  include_once('lib/twitteroauth/EpiCurl.php');
-  include_once('lib/twitteroauth/EpiOAuth.php');
-  include_once('lib/twitteroauth/EpiTwitter.php');
-  include_once('lib/twitteroauth/secret.php');
+  include_once('/lib/twitteroauth/EpiCurl.php');
+  include_once('/lib/twitteroauth/EpiOAuth.php');
+  include_once('/lib/twitteroauth/EpiTwitter.php');
+  include_once('/lib/twitteroauth/secret.php');
 
   // instantiate twitter object
   $twitterObj = new EpiTwitter($consumer_key, $consumer_secret, $user_token, $user_secret_token);
