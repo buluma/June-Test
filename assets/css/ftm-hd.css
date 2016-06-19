@@ -1,0 +1,1044 @@
+/* by Quodis © 2010 */
+
+html, body { height: 100%; }
+
+body {
+	position: relative;
+	width: 100%;
+	color: #333;
+	font-family: Georgia, serif;
+	font-size: 13px;
+	line-height: 25px; /* baseline grid of 20px */
+	background: #16A2B3 url("../img/global/main-loading.gif") center center no-repeat;
+	overflow: hidden;
+}
+/* ----------------------------------------- */
+/* END General Styles */
+
+
+/* BEGIN Page Structure */
+/* ----------------------------------------- */
+div#page {
+	width: 100%;
+	height: 100%;
+	background-color: #ECF8FA;
+	background-image: url("../img/hd/machine-tubes-hd.png"), url("../img/hd/main-bg-hd.jpg");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	position: relative;
+}
+
+header#brand {
+	position: absolute;
+	z-index: 40;
+	left: 0;
+	top: 0;
+	margin: 20px;
+}
+
+section#bubbles {
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+section#machine {
+	position: absolute;
+	z-index: 20;
+	bottom: 0;
+	left: 50%;
+	width: 630px;
+	height: 440px;
+	margin: 0 0 0 -315px;
+	background: transparent url(../img/hd/machine-body-hd.png) no-repeat bottom center;
+}
+
+footer {
+	position: absolute;
+	z-index: 30;
+	left: 50%;
+	bottom: 0;
+	width: 448px;
+	height: 84px;
+	margin: 0 0 0 -224px;
+	text-align: center;
+}
+/* ----------------------------------------- */
+/* END Page Structure */
+
+
+/* BEGIN Page Components */
+/* ----------------------------------------- */
+
+/* brand */
+header#brand h1 {
+	display: block;
+}
+
+header#brand h1 a,
+header#brand h1 a:visited {
+	display: block;
+	width: 290px;
+	height: 156px;
+	background: transparent url(../img/hd/ftm-brand-logo-hd.png) no-repeat center center;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+/* brand /*/
+
+/* search-box */
+form#search-box {
+	position: absolute;
+	z-index: 10;
+	top: 104px;
+	left: 132px;
+	height: 56px;
+	width: 364px;
+}
+
+form#search-box label {
+	text-indent: -9999px;
+	position: absolute;
+	top: 0;
+}
+
+form#search-box input.text {
+	display: block;
+	background: transparent;
+	border: 0 none;
+	color: #FFF;
+	float: left;
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 34px;
+	letter-spacing: 0.5px;
+	line-height: 40px;
+	height: 40px;
+	padding: 10px 66px 6px 14px;
+	width: 286px;
+	outline: 0;
+	vertical-align: baseline;
+}
+
+form#search-box .button {
+	background: transparent url("../img/hd/search-sbmt-bttn-hd.png") no-repeat center center;
+	border: 0 none;
+	display: block;
+	float: left;
+	width: 35px;
+	height: 35px;
+	margin: 14px 0 0 -50px;
+	outline: 0 none;
+	overflow: hidden;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+
+form#search-box .button.loading {
+	background: transparent url("../img/hd/machine-loading-hd.gif") no-repeat center center;
+}
+/* search-box /*/
+
+/* levers */
+li.lever a {
+	position: absolute;
+	z-index: 20;
+	display: block;
+	width: 70px;
+	height: 88px;
+	background: transparent url(../img/hd/machine-levers-hd.png) no-repeat;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+li#gravity-inverter a {
+	top: 230px;
+	left: 110px;
+}
+
+li#flow-transposer a {
+	top: 230px;
+	right: 110px;
+}
+
+li#gravity-inverter.up a { background-position: 0 0; }
+li#gravity-inverter.down a { background-position: -70px 0; }
+
+li#flow-transposer.up a { background-position: -158px 0; }
+li#flow-transposer.down a { background-position: -228px 0; }
+/* levers /*/
+
+/* activity-indicator */
+li#activity-indicator {
+	position: absolute;
+	z-index: 30;
+	top: 20px;
+	right: 35px;
+	display: block;
+	width: 35px;
+	height: 70px;
+	background: transparent url(../img/hd/light-bulb-hd.png) no-repeat;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+li#activity-indicator.off {
+	background-position: top left;
+}
+
+li#activity-indicator.on {
+	background-position: -42px 0;
+}
+/* activity-indicator /*/
+
+/* pressure-indicator */
+li#pressure-indicator {
+	position: absolute;
+	z-index: 40;
+	top: 250px;
+	left: 217px;
+	display: block;
+	width: 196px;
+	height: 70px;
+	background: transparent url(../img/hd/pressure-display-hd.png) no-repeat bottom center;
+}
+
+li#pressure-indicator .value {
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	font-weight: 400;
+	text-shadow: 0 1px #BDF0F4;
+	color: #0D5C66;
+	font-size: 18px;
+	vertical-align: bottom;
+	width: 42px;
+	height: 18px;
+	margin: 50px 0 0 0;
+}
+
+li#pressure-indicator .value.min {
+	text-align: right;
+	float: left;
+}
+
+li#pressure-indicator .value.max {
+	text-align: left;
+	float: right;
+}
+
+li#pressure-indicator .pointer {
+	position: absolute;
+	z-index: 40;
+	bottom: 0;
+	left: 50px;
+	display: block;
+	width: 98px;
+	height: 42px;
+	/* background: transparent url(../img/hd/pressure-display-pointer-hd.png) no-repeat bottom center; */
+	/* overflow: hidden; */
+	/* text-indent: -9999px; */
+}
+/* pressure-indicator /*/
+
+/* dashboards */
+dl.dashboard {
+	position: absolute;
+	z-index: 60;
+	bottom: 0;
+	width: 364px;
+	height: 182px;
+	background: transparent url(../img/hd/dashboard-hd.png) no-repeat top center;
+}
+
+dl#social-tools {
+	left: -252px;
+}
+
+dl#social-tools dt {
+	position: absolute;
+	z-index: 10px;
+	top: 76px;
+}
+
+dl#social-tools dd {
+	position: absolute;
+	z-index: 10px;
+	top: 38px;
+}
+
+dl#social-tools dt.twitter-follow,
+dl#social-tools dd.twitter-follow {
+	left: 42px;
+}
+
+dl#social-tools dt.twitter-retweet,
+dl#social-tools dd.twitter-retweet {
+	left: 132px;
+}
+
+dl#social-tools dt.fb-share,
+dl#social-tools dd.fb-share {
+	left: 222px;
+}
+
+dl#social-tools a {
+	background: transparent url(../img/hd/dashboard-bttns-hd.png) no-repeat;
+	width: 87px;
+	text-align: center;
+	display: block;
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	text-transform: lowercase;
+}
+
+dl#social-tools dt a {
+	height: 30px;
+	line-height: 28px;
+	padding: 0 0 0 25px;
+	font-size: 20px;
+	color: #FFF;
+	font-weight: 300;
+	width: 62px;
+	text-align: left;
+}
+
+dl#social-tools dd a {
+	height: 28px;
+	line-height: 26px;
+	font-size: 20px;
+	padding: 0 0 7px 0;
+	font-weight: 400;
+}
+
+dl#social-tools dt.twitter-follow a,
+dl#social-tools dt.twitter-follow a:visited {
+	background-position: 0 -35px;
+	text-decoration: none;
+}
+
+dl#social-tools dt.twitter-follow a:hover {
+	background-position: 0 -105px;
+}
+
+dl#social-tools dd.twitter-follow a,
+dl#social-tools dd.twitter-follow a:visited {
+	background-position: 0 0;
+	color: #0A454D;
+	text-decoration: none;
+}
+
+dl#social-tools dd.twitter-follow a:hover {
+	color: #0A454D;
+}
+
+dl#social-tools dt.twitter-retweet a,
+dl#social-tools dt.twitter-retweet a:visited {
+	background-position: -91px -35px;
+	text-decoration: none;
+}
+
+dl#social-tools dt.twitter-retweet a:hover {
+	background-position: -91px -105px;
+}
+
+dl#social-tools dd.twitter-retweet a,
+dl#social-tools dd.twitter-retweet a:visited {
+	background-position: -91px 0;
+	color: #374D17;
+	text-decoration: none;
+}
+
+dl#social-tools dd.twitter-retweet a:hover {
+	color: #374D17;
+}
+
+dl#social-tools dt.fb-share a,
+dl#social-tools dt.fb-share a:visited {
+	background-position: -182px -35px;
+	text-decoration: none;
+}
+
+dl#social-tools dt.fb-share a:hover {
+	background-position: -182px -105px;
+}
+
+dl#social-tools dd.fb-share a,
+dl#social-tools dd.fb-share a:visited {
+	background-position: -182px 0;
+	text-decoration: none;
+	color: #2B5072;
+}
+
+dl#social-tools dd.fb-share a:hover {
+	color: #2B5072;
+}
+
+dl#counter {
+	right: -266px;
+	text-align: center;
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+}
+
+dl#counter dt {
+	position: absolute;
+	z-index: 10px;
+	top: 78px;
+	left: 50px;
+	width: 252px;
+	height: 32px;
+	line-height: 32px;
+	color: #805957;
+	font-weight: 300;
+	font-size: 22px;
+	letter-spacing: 0.2;
+	overflow: hidden;
+}
+
+dl#counter dd {
+	position: absolute;
+	z-index: 10px;
+	top: 40px;
+	left: 50px;
+	width: 252px;
+	height: 36px;
+	padding: 0 0 7px 0;
+	color: #593F3E;
+	background: transparent url(../img/hd/dashboard-bttns-hd.png) no-repeat -273px -2px;
+	font-size: 28px;
+	line-height: 34px;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+	overflow: hidden;
+}
+/* dashboards /*/
+
+
+/* bubbles */
+article.bubble.tweet {
+	position: absolute;
+	z-index: 10;
+	top: 20%;
+	left: 40%;
+	width: 200px;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center center; 
+	padding: 40px;
+	font-size: 18px;
+}
+
+article.bubble.tweet header,
+article.bubble.tweet p {
+	text-align: center;
+}
+
+article.bubble.tweet h1 {
+	line-height: 30px;
+}
+
+article.bubble.tweet .avatar-wrapper {
+	position: absolute;
+	z-index: 10;
+	top: 50%; /* final: 20px */
+	left: 50%; /* final: -22% */
+	width: 110px;
+	height: 110px;
+	background-color: transparent;
+  	background-position: center center;
+  	background-repeat: no-repeat;
+  	margin: 0;
+}
+
+article.bubble.tweet .avatar-wrapper a {
+	display: block;
+	width: 65px;
+	height: 65px;
+	background-image: url(../img/hd/tweet-avatar-wrapper-hd.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	text-align: center;
+	-moz-transform: rotate(-5deg); -webkit-transform: rotate(-5deg); -o-transform: rotate(-5deg);
+	padding: 4px;
+	border: 1px solid transparent;
+	margin: 15px auto 0 auto;
+}
+
+article.bubble.tweet .avatar-wrapper img {
+	background: #FFF;
+	height: 65px;
+	width: 65px;
+}
+
+article.bubble.tweet p.text {
+	margin: 20px 0 0 0;
+	width: 100%;
+	overflow: hidden;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+article.bubble.tweet a {
+	text-decoration: underline;
+}
+
+article.bubble.tweet h1 a,
+article.bubble.tweet h1 a:visited {
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 28px;
+	text-decoration: none;
+	letter-spacing: -0.5px;
+}
+
+article.bubble.tweet time a,
+article.bubble.tweet time a:visited {
+	font-style: italic;
+	text-decoration: none;
+}
+
+/* normal txt color */
+article.bubble.tweet {
+	color: #3E6163;
+}
+
+article.bubble.tweet a,
+article.bubble.tweet a:visited {
+	color: #3DA6B3;
+}
+
+/* firefox txt colors */
+article.bubble.tweet.firefox {
+	color: #4C3E01;
+}
+
+article.bubble.tweet.firefox a,
+article.bubble.tweet.firefox a:visited {
+	color: #8C7202;
+}
+
+article.bubble.tweet span.mood {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	background-color: #FFF;
+	padding: 2px 4px;
+}
+
+article.bubble.tweet span.mood.violet { color: #6B5DC1; }
+article.bubble.tweet span.mood.pink { color: #D05F6F; }
+article.bubble.tweet span.mood.green { color: #6C9931; }
+article.bubble.tweet span.mood.orange { color: #DF731B; }
+
+article.bubble.tweet dl {
+	padding: 20px 0 0 0;
+	line-height: 25px;
+	font-size: 16px;
+}
+
+article.bubble.tweet dt {
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	color: #1A7B82;
+	float: left;
+	text-align: right;
+	width: 30%;
+	line-height: 25px;
+	letter-spacing: 0.2px;
+	clear: both;
+}
+
+article.bubble.tweet.firefox dt {
+	color: #8C7202;
+}
+
+article.bubble.tweet dd {
+	line-height: 25px;
+	padding: 0 0 0 35%;
+	width: 65%;
+}
+
+article.bubble.tweet nav {
+	position: absolute;
+	z-index: 30;
+	top: 125px;
+	left: -20%;
+	width: 80px;
+	height: 100px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+  	padding: 10px;
+  	-moz-transform: rotate(-8deg); -webkit-transform:rotate(-8deg); -o-transform:rotate(-8deg);
+}
+
+article.bubble.tweet nav li {
+	margin: 5px 0;
+	text-align: center;
+}
+
+article.bubble.tweet nav li.flip { -moz-transform: rotate(3deg); -webkit-transform:rotate(3deg); -o-transform:rotate(3deg); }
+article.bubble.tweet nav li.retweet { -moz-transform: rotate(-3deg); -webkit-transform:rotate(-3deg); -o-transform:rotate(-3deg); }
+article.bubble.tweet nav li.follow { -moz-transform: rotate(3deg); -webkit-transform:rotate(3deg); -o-transform:rotate(3deg); }
+
+article.bubble.tweet nav a,
+article.bubble.tweet nav a:visited,
+article.bubble.tweet.firefox nav a,
+article.bubble.tweet.firefox nav a:visited {
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	color: #FFF;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	padding: 2px 6px;
+	text-decoration: none;
+	text-align: center;
+	text-transform: lowercase;
+	letter-spacing: 0.5px;
+}
+
+article.bubble.tweet nav li.flip a, article.bubble.tweet nav li.flip a:visited { background: #536366; }
+article.bubble.tweet nav li.flip a:hover { background: #2A3233; }
+article.bubble.tweet nav li.retweet a, article.bubble.tweet nav li.retweet a:visited { background: #8DC339; }
+article.bubble.tweet nav li.retweet a:hover { background: #68902A; }
+article.bubble.tweet nav li.follow a, article.bubble.tweet nav li.follow a:visited { background: #17ABBD; }
+article.bubble.tweet nav li.follow a:hover { background: #117D8A; }
+
+/* size xxl */
+article.bubble.tweet.xxl { height: 350px; }
+
+/* size xl */
+article.bubble.tweet.xl { height: 300px; }
+
+/* size l */
+article.bubble.tweet.l { height: 250px; }
+
+/* size m */
+article.bubble.tweet.m { height: 200px; }
+
+/* size s */
+article.bubble.tweet.s { height: 150px; }
+
+/* opacity very high */
+
+	/* size xxl */
+	article.bubble.tweet.vhigh.xxl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-veryhigh-size-xxl-hd.png); }
+	article.bubble.tweet.firefox.vhigh.xxl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-veryhigh-size-xxl-hd.png); }
+	
+	/* size xl */
+	article.bubble.tweet.vhigh.xl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-veryhigh-size-xl-hd.png); }
+	article.bubble.tweet.firefox.vhigh.xl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-veryhigh-size-xl-hd.png); }
+	
+	/* size l */
+	article.bubble.tweet.vhigh.l { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-veryhigh-size-l-hd.png); }
+	article.bubble.tweet.firefox.vhigh.l { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-veryhigh-size-l-hd.png); }
+	
+	/* size m */
+	article.bubble.tweet.vhigh.m { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-veryhigh-size-m-hd.png); }
+	article.bubble.tweet.firefox.vhigh.m { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-veryhigh-size-m-hd.png); }
+	
+	/* size s */
+	article.bubble.tweet.vhigh.s { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-veryhigh-size-s-hd.png); }
+	article.bubble.tweet.firefox.vhigh.s { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-veryhigh-size-s-hd.png); }
+	
+	/* avatar & nav */
+	article.bubble.tweet.vhigh .avatar-wrapper { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-avatar-opa-veryhigh-hd.png); }
+	article.bubble.tweet.vhigh nav { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-nav-opa-veryhigh-hd.png); }
+	article.bubble.tweet.firefox.vhigh .avatar-wrapper { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-avatar-opa-veryhigh-hd.png); }
+	article.bubble.tweet.firefox.vhigh nav { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-nav-opa-veryhigh-hd.png); }
+
+/* opacity high */
+	
+	/* size xxl */
+	article.bubble.tweet.high.xxl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-high-size-xxl-hd.png); }
+	article.bubble.tweet.firefox.high.xxl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-high-size-xxl-hd.png); }
+
+	/* size xl */
+	article.bubble.tweet.high.xl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-high-size-xl-hd.png); }
+	article.bubble.tweet.firefox.high.xl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-high-size-xl-hd.png); }
+	
+	/* size l */
+	article.bubble.tweet.high.l { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-high-size-l-hd.png); }
+	article.bubble.tweet.firefox.high.l { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-high-size-l-hd.png); }
+	
+	/* size m */
+	article.bubble.tweet.high.m { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-high-size-m-hd.png); }
+	article.bubble.tweet.firefox.high.m { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-high-size-m-hd.png); }
+	
+	/* size s */
+	article.bubble.tweet.high.s { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-high-size-s-hd.png); }
+	article.bubble.tweet.firefox.high.s { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-high-size-s-hd.png); }
+	
+	/* avatar & nav */
+	article.bubble.tweet.high .avatar-wrapper { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-avatar-opa-high-hd.png); }
+	article.bubble.tweet.high nav { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-nav-opa-high-hd.png); }
+	article.bubble.tweet.firefox.high .avatar-wrapper { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-avatar-opa-high-hd.png); }
+	article.bubble.tweet.firefox.high nav { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-nav-opa-high-hd.png); }
+	
+/* opacity medium */
+
+	/* size xxl */
+	article.bubble.tweet.med.xxl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-medium-size-xxl-hd.png); }
+	article.bubble.tweet.firefox.med.xxl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-medium-size-xxl-hd.png); }
+	
+	/* size xl */
+	article.bubble.tweet.med.xl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-medium-size-xl-hd.png); }
+	article.bubble.tweet.firefox.med.xl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-medium-size-xl-hd.png); }
+	
+	/* size l */
+	article.bubble.tweet.med.l { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-medium-size-l-hd.png); }
+	article.bubble.tweet.firefox.med.l { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-medium-size-l-hd.png); }
+	
+	/* size m */
+	article.bubble.tweet.med.m { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-medium-size-m-hd.png); }
+	article.bubble.tweet.firefox.med.m { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-medium-size-m-hd.png); }
+	
+	/* size s */
+	article.bubble.tweet.med.s { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-medium-size-s-hd.png); }
+	article.bubble.tweet.firefox.med.s { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-medium-size-s-hd.png); }
+	
+	/* avatar & nav */
+	article.bubble.tweet.med .avatar-wrapper { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-avatar-opa-medium-hd.png); }
+	article.bubble.tweet.med nav { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-nav-opa-medium-hd.png); }
+	article.bubble.tweet.firefox.med .avatar-wrapper { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-avatar-opa-medium-hd.png); }
+	article.bubble.tweet.firefox.med nav { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-nav-opa-medium-hd.png); }
+
+
+/* opacity low */
+	
+	/* size xxl */
+	article.bubble.tweet.low.xxl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-low-size-xxl-hd.png); }
+	article.bubble.tweet.firefox.low.xxl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-low-size-xxl-hd.png); }
+
+	/* size xl */
+	article.bubble.tweet.low.xl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-low-size-xl-hd.png); }
+	article.bubble.tweet.firefox.low.xl { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-low-size-xl-hd.png); }
+	
+	/* size l */
+	article.bubble.tweet.low.l { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-low-size-l-hd.png); }
+	article.bubble.tweet.firefox.low.l { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-low-size-l-hd.png); }
+	
+	/* size m */
+	article.bubble.tweet.low.m { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-low-size-m-hd.png); }
+	article.bubble.tweet.firefox.low.m { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-low-size-m-hd.png); }
+	
+	/* size s */
+	article.bubble.tweet.low.s { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-opa-low-size-s-hd.png); }
+	article.bubble.tweet.firefox.low.s { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-opa-low-size-s-hd.png); }
+	
+	/* avatar & nav */
+	article.bubble.tweet.low .avatar-wrapper { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-avatar-opa-low-hd.png); }
+	article.bubble.tweet.low nav { background-image: url(../img/hd/bubbles-hd/bubble-tweet-regular-nav-opa-low-hd.png); }
+	article.bubble.tweet.firefox.low .avatar-wrapper { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-avatar-opa-low-hd.png); }
+	article.bubble.tweet.firefox.low nav { background-image: url(../img/hd/bubbles-hd/bubble-tweet-firefox-nav-opa-low-hd.png); }
+	
+	
+/* time bubble */
+article.bubble.time {
+	position: absolute;
+	z-index: 10;
+	/* top: 20%; */
+	/* left: 20%; */
+	width: 160px;
+	height: 200px;
+	background-image: url(../img/hd/bubbles-hd/bubble-time-hd.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center center; 
+	padding: 40px;
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	text-align: center;
+}
+
+article.bubble.time h1 {
+	padding: 130px 0 0 0;
+	color: #941403;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 300;
+	background: transparent url(../img/hd/special-icon-time-hd.png) no-repeat top center;
+}
+
+article.bubble.time p {
+	margin: 0;
+	color: #660E02;
+	font-size: 50px;
+	font-weight: 400;
+	letter-spacing: -0.5px;
+	line-height: 50px;
+}
+
+/* downloads bubble */
+article.bubble.downloads {
+	position: absolute;
+	z-index: 10;
+	/* top: 50%; */
+	/* left: 10%; */
+	width: 200px;
+	height: 200px;
+	background-image: url(../img/hd/bubbles-hd/bubble-downloads-hd.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center center; 
+	padding: 40px;
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	text-align: center;
+}
+
+article.bubble.downloads h1 {
+	padding: 130px 0 0 0;
+	color: #5A7330;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 300;
+	background: transparent url(../img/hd/special-icon-downloads-hd.png) no-repeat top center;
+}
+
+article.bubble.downloads p {
+	margin: 0;
+	color: #3C4D21;
+	font-size: 50px;
+	font-weight: 400;
+	letter-spacing: -0.5px;
+	line-height: 50px;
+}
+
+article.bubble.downloads p a,
+article.bubble.downloads p a:visited {
+	color: #3C4D21;
+}
+
+/* followers bubble */
+article.bubble.followers {
+	position: absolute;
+	z-index: 10;
+	/* top: 50%; */
+	/* left: 10%; */
+	width: 200px;
+	height: 200px;
+	background-image: url(../img/hd/bubbles-hd/bubble-followers-hd.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center center; 
+	padding: 40px;
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	text-align: center;
+}
+
+article.bubble.followers h1 {
+	padding: 130px 0 0 0;
+	color: #348E99;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 300;
+	background: transparent url(../img/hd/special-icon-followers-hd.png) no-repeat top center;
+}
+
+article.bubble.followers p {
+	margin: 0;
+	color: #235F66;
+	font-size: 50px;
+	font-weight: 400;
+	letter-spacing: -0.5px;
+	line-height: 50px;
+}
+
+article.bubble.downloads p a,
+article.bubble.downloads p a:visited {
+	color: #235F66;
+}
+
+/* error bubble */
+article.bubble.error {
+	position: absolute;
+	z-index: 10;
+	top: 30%;
+	left: 10%;
+	width: 200px;
+	height: 250px;
+	background-image: url(../img/hd/bubbles-hd/bubble-error-hd.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center center; 
+	padding: 40px;
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	text-align: center;
+}
+
+article.bubble.error h1 {
+	padding: 130px 0 0 0;
+	color: #941403;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 300;
+	background: transparent url(../img/hd/special-icon-error-hd.png) no-repeat top center;
+}
+
+article.bubble.error p {
+	margin: 0;
+	color: #660E02;
+	font-size: 50px;
+	font-weight: 400;
+	letter-spacing: -0.5px;
+	line-height: 50px;
+}
+
+/* search bubble */
+article.bubble.search {
+	position: absolute;
+	z-index: 10;
+	top: 30%;
+	left: 10%;
+	width: 200px;
+	height: 250px;
+	background-image: url(../img/hd/bubbles-hd/bubble-search-hd.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center center; 
+	padding: 40px;
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	text-align: center;
+}
+
+article.bubble.search h1 {
+	padding: 130px 0 0 0;
+	color: #A1716F;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 300;
+	background: transparent url(../img/hd/special-icon-search-hd.png) no-repeat top center;
+}
+
+article.bubble.search p {
+	margin: 0;
+	color: #73504F;
+	font-size: 50px;
+	font-weight: 400;
+	letter-spacing: -0.5px;
+	line-height: 50px;
+}
+/* bubbles  /*/
+
+/* colophon */
+#colophon-wrapper { display: none; }
+
+#colophon {
+	padding: 40px 40px 10px 40px;
+}
+
+#colophon a,
+#colophon a:visited {
+	color: #FCB50D;
+	text-decoration: none;
+}
+
+#colophon a:hover {
+	color: #FDDA86;
+}
+
+#colophon h1 {
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	font-size: 34px;
+	line-height: 40px;
+	font-weight: 300;
+	margin: 0 0 20px 0;
+}
+
+#colophon h2 {
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	font-size: 28px;
+	line-height: 30px;
+	font-weight: 300;
+	margin: 0 0 20px 0;
+}
+
+#colophon p {
+	line-height: 25px;
+}
+
+#cboxContent {
+	position: relative;
+	background: #2B7480 url(../img/hd/modal-bg-hd.png) top left repeat;
+	box-shadow: 10px 10px 5px #002322;
+	box-shadow: 6px 6px 0 rgba(0, 35, 34, 0.25); -moz-box-shadow: 6px 6px 0 rgba(0, 35, 34, 0.25); -webkit-box-shadow: 6px 6px 0 rgba(0, 35, 34, 0.25);
+	border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+	color: #FFF;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+#cboxOverlay {
+	background-color: #03171A;
+}
+
+#cboxClose {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 0;
+	text-indent: -9999px;
+	overflow: hidden;
+	background: transparent url(../img/hd/modal-close-bttn-hd.png) top center no-repeat;
+	height: 30px;
+	width: 30px;
+}
+
+#cboxClose:hover {
+	background: transparent url(../img/hd/modal-close-bttn-hd.png) bottom center no-repeat;
+	cursor: pointer;
+}
+
+#cboxLoadingOverlay {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#cboxLoadedContent {
+	margin: 0;
+}
+/* colophon /*/
+
+/* footer */
+footer {
+	color: #0C5C66;
+}
+
+footer p.links {
+	margin: 30px 0 0 0;
+}
+
+footer p.links a,
+footer p.links a:visited {
+	font-family: "Yanone Kaffeesatz","Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", helvetica, sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+	font-size: 20px;
+	color: #0C5C66;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+	padding: 3px 9px;
+	text-shadow: 0 1px #BFEDEF;
+	text-transform: lowercase;
+	text-decoration: none;
+	background: transparent url(../img/hd/footer-bttn-hd.png) no-repeat top center;
+	margin: 0 4px;
+}
+
+footer p.links a:hover {
+	color: #C1E7EA;
+	text-shadow: 0 -1px #3C6868;
+	background: transparent url(../img/hd/footer-bttn-hd.png) no-repeat bottom center;
+	text-decoration: none;
+}
+/* footer /*/
+
+/* ----------------------------------------- */
+/* END Page Components */
