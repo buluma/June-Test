@@ -46,4 +46,4 @@ ex: memcache host/port (localhost:11211)
     --js=keyboard.js \
     --js=preload.js \
     --js=webtrends.js \
-    --js_output_file=minimized.js
+    --js_output_file=minimized.js# June-Test
